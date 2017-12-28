@@ -7,7 +7,7 @@ to the one they want on Unix systems. I created this because I'm working on two 
 are using two different versions of grails. 
 
 ### Pre-use
-Assuming your GRAILS_HOME environment variable is set to /usr/local/grails, you need
+Assuming your GRAILS_HOME environment variable is set to /usr/local/grails (or /usr/share/grails if that's where you have grails installed), you need
 to have a symbolic link also set up for this tool to work. Example of how to do this:
 ```shell
 # cd into wherever grails is installed, likely /usr/local or /usr/share
