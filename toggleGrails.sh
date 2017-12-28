@@ -11,7 +11,7 @@ fi
 cd /usr/local
 currentGrails=$(readlink grails)
 
-if [ -z $currentGrails ]; then
+if [[ -z $currentGrails ]]; then
 	echo "No 'grails' link configured."
 	exit 1
 fi
@@ -22,7 +22,7 @@ if [[ ! -d "grails-$1" ]]; then
 fi
 
 newGrails="grails-$1"
-if [ $currentGrails == "$newGrails/" ]; then
+if [[ $currentGrails == "$newGrails/" ]]; then
 	echo "Grails is already set to that version."
 else
 	echo "Grails now set to version $1"
