@@ -34,5 +34,4 @@ alias tg="sudo sh toggleGrails.sh"
 Now, on the terminal, you can quickly use the tool by simply typing something like: 
 ```shell
 tg 2.3.3
-Grails now set to version 2.3.3
 ```
