@@ -6,6 +6,13 @@ __pycache__/
 # C extensions
 *.so
 
+# Mac Garbage
+.DS_Store
+
+#IntelliJ Garbage
+.idea/
+*.iml
+
 # Distribution / packaging
 .Python
 env/
