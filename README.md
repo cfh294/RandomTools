@@ -3,11 +3,11 @@ A repository for scripts and tools with no current home
 
 ## toggleGrails
 Shell script that allows the user to quickly toggle from their current grails version 
-to the one they want. I created this because I'm working on two projects simultaneously that
+to the one they want on Unix systems. I created this because I'm working on two projects simultaneously that
 are using two different versions of grails. 
 
 ### Pre-use
-Assuming your [$GRAILS_HOME environment variable is set up correctly](https://stackoverflow.com/questions/7413061/setting-environment-variables), you need
+Assuming your GRAILS_HOME environment variable is set to /usr/local/grails, you need
 to have a symbolic link also set up for this tool to work. Example of how to do this:
 ```shell
 # cd into wherever grails is installed, likely /usr/local or /usr/share
