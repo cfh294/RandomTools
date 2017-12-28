@@ -18,7 +18,7 @@ sudo ln -s grails-2.3.10/ grails
 ```
 
 Once this is done, the script should work. The tool works on the assumption that you use the 
-grails installation file-naming convention of grails-version-number-format (i.e. grails-2.4.4).
+grails installation file-naming convention of grails-version.number.format (i.e. grails-2.4.4).
 
 ### Use
 To change from your current version to 2.4.4 (if it's installed): 
