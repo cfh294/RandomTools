@@ -29,7 +29,7 @@ sudo sh toggleGrails.sh 2.4.4
 ### Tip
 As a shortcut, paste the script into your home directory. Then use your favorite text editor to edit your .bash_profile to include: 
 ```shell
-alias tg="sudo sh toggleGrails.sh"
+alias tg="sudo sh ${HOME}/toggleGrails.sh"
 ```
 Now, on the terminal, you can quickly use the tool by simply typing something like: 
 ```shell
