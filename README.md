@@ -46,5 +46,5 @@ cd /usr/local
 ```
 to...
 ```shell
-cd <directory that houses grails>
+cd directory/that/houses/grails
 ```
