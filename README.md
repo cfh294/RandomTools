@@ -37,3 +37,14 @@ Now, on the terminal, you can quickly use the tool by simply typing something li
 ```shell
 tg 2.3.3
 ```
+
+### Warning
+If you have grails installed somewhere other than /usr/local, you have to make a minor edit to the script.
+Change the line:
+```shell
+cd /usr/local
+```
+to...
+```shell
+cd <directory that houses grails>
+```
