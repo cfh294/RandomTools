@@ -17,6 +17,8 @@ cd /usr/local
 sudo ln -s grails-2.3.10/ grails
 ```
 
+[More info on this here.](https://128bit.io/2011/03/31/install-groovy-and-grails-on-mac-os-x/)
+
 Once this is done, the script should work. The tool works on the assumption that you use the 
 grails installation file-naming convention of grails-version.number.format (i.e. grails-2.4.4).
 
