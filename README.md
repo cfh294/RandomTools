@@ -2,6 +2,9 @@
 A repository for scripts and tools with no current home
 
 ## toggleGrails
+
+### NOTE: [SDKMAN](http://sdkman.io/usage.html#default) does this! I wrote this out of neccessity because sdkman was not working on my computer at the time! While this script is no longer needed, it was still a good exercise in basic bash programming!
+
 Shell script that allows the user to quickly toggle from their current grails version 
 to the one they want on Unix systems. I created this because I'm working on two projects simultaneously that
 are using two different versions of grails. 
