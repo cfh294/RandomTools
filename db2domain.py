@@ -27,7 +27,7 @@ class Column(object):
         self.data_type = self.get_type(stripped_type, precision)
         self.data_length = data_length
         self.precision = precision
-        self.mapping = "\t\t\t{0} column: '{1}'\n".format(self.name, self.old_name)
+        self.mapping = "\t\t\t{0} column: '{1}'\n".format(self.name, self.old_name.upper())
 
     def get_type(self, in_data_type, in_precision):
 
@@ -133,16 +133,16 @@ if __name__ == "__main__":
         column_list = get_column_list(cursor, owner, table)
         groovy_file = "class " + class_name + " {\n\n"
         constraints = "\tstatic constraints = {\n\n"
-        mapping = "\tstatic mapping = {{\n\n\t\t\ttable '{0}.{1}'\n".format(owner, table)
+        mapping = "\tstatic mapping = {{\n\n\t\t\ttable '{0}.{1}'\n".format(owner.upper(), table.upper())
 
         if id_column is not None:
-            mapping += "\t\t\tid column: '{0}', name: 'id'\n".format(id_column)
+            mapping += "\t\t\tid column: '{0}', name: 'id'\n".format(id_column.upper())
             groovy_file += "\t// The unique id field\n\tint id\n\n"
             column_list.remove(id_column)
 
         if version_column is not None:
             groovy_file += "\t// The version field\n\tint version\n\n"
-            mapping += "\t\t\tversion column: '{0}', name: 'version'\n\n".format(version_column)
+            mapping += "\t\t\tversion column: '{0}', name: 'version'\n\n".format(version_column.upper())
             column_list.remove(version_column)
         else:
             mapping += "\t\t\tversion false\n"
