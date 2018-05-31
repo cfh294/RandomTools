@@ -1,6 +1,26 @@
 # RandomTools
 A repository for scripts and tools with no current home
 
+## db2domain
+Python command line tool that allows you to reverse engineer an Oracle database table and output a Grails domain class.
+
+### Note
+Grails 2+ has a reverse engineer plugin but it's completely overcomplicated in my opinion and I needed something more like
+Django's "inspectdb" command.
+
+### Usage
+```shell
+python db2domain.py <jdbc connection string> <password> <domain class name> <table owner> <table name>
+```
+Optional arguments:
++ -vf: The name of the version column
++ -i:  The name of the id column
++ -pf: A column name prefix that you want your grails class to ignore when creating field names
+
+### Dependencies
++ Python 3
++ cx Oracle and related Oracle installation requirements
+
 ## toggleGrails
 Shell script that allows the user to quickly toggle from their current grails version 
 to the one they want on Unix systems. I created this because I'm working on two projects simultaneously that
