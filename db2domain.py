@@ -7,13 +7,13 @@ class Column(object):
     type_conversion = {
         "VARCHAR2":         "String",
         "VARCHAR":          "String",
-        "LONG":             "int",
-        "NUMBER":           "int",
-        "FLOAT":            "float",
-        "INT":              "int",
-        "INTEGER":          "int",
-        "DECIMAL":          "float",
-        "DOUBLE PRECISION": "double",
+        "LONG":             "Integer",
+        "NUMBER":           "Integer",
+        "FLOAT":            "Float",
+        "INT":              "Integer",
+        "INTEGER":          "Integer",
+        "DECIMAL":          "Float",
+        "DOUBLE PRECISION": "Double",
         "DATE":             "Date",
         "TIMESTAMP":        "Date"
     }
@@ -114,6 +114,7 @@ def get_arg_parser():
     parser.add_argument("-vf", "--version", type=str, help="The name of the version field.", default=None)
     parser.add_argument("-i", "--id", type=str,  help="The name of the grails-friendly id field.", default=None)
     parser.add_argument("-pf", "--prefix", type=str, help="The column prefix to be removed.", default=None)
+    parser.add_argument("-pkg", "--package", type=str, help="The name of the package that this class will belong to.", default=None)
     return parser
 
 
@@ -126,12 +127,16 @@ if __name__ == "__main__":
     id_column = args.id
     version_column = args.version
     in_chop_prefix = args.prefix
+    in_package = args.package
 
     with parse_connection(args.connection, args.password) as connection:
 
         cursor = connection.cursor()
         column_list = get_column_list(cursor, owner, table)
         groovy_file = "class " + class_name + " {\n\n"
+	if in_package:
+            groovy_file = "package {0}\n\n{1}".format(in_package, groovy_file)
+
         constraints = "\tstatic constraints = {\n\n"
         mapping = "\tstatic mapping = {{\n\n\t\t\ttable '{0}.{1}'\n".format(owner.upper(), table.upper())
 
@@ -152,7 +157,7 @@ if __name__ == "__main__":
         for column_name in column_list:
             column_object = get_column_object(cursor, owner, table, column_name, chop_prefix=in_chop_prefix)
             ordered_fields.append("\t{0} {1}\n".format(column_object.data_type, column_object.name))
-            constraints += "\t\t\t{0}(nullable:{1})\n".format(column_object.name, column_object.nullable)
+            constraints += "\t\t\t{0} nullable:{1}\n".format(column_object.name, column_object.nullable)
 
             if in_chop_prefix is not None:
                 mapping += column_object.mapping
