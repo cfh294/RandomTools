@@ -16,6 +16,7 @@ Optional arguments:
 + -vf: The name of the version column
 + -i:  The name of the id column
 + -pf: A column name prefix that you want your grails class to ignore when creating field names
++ -pkg: The name of the package that you want your domain class to belong to
 
 ### Dependencies
 + Python 3
